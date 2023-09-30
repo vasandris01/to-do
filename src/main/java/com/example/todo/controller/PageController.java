@@ -19,4 +19,9 @@ public class PageController {
         model.addAttribute("users", userService.getAllUser());
         return "home";
     }
+
+    @GetMapping("/todo/{id}")
+    public String getToDos(){
+        return "todo";
+    }
 }

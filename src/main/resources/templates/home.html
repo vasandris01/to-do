@@ -6,7 +6,9 @@
 </head>
 <body>
 <li th:each="user : ${users}">
-    <span th:text="${user.getFirstName()}"></span>
+    <a th:href="@{/todo/{id}(id=${user.getId()})}">
+        <span th:text="${user.getFirstName()}"></span>
+    </a>
 </li>
 </body>
 </html>
