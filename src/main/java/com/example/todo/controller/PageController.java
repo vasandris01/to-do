@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @Controller
@@ -21,7 +22,8 @@ public class PageController {
     }
 
     @GetMapping("/todo/{id}")
-    public String getToDos(){
+    public String getToDos(@PathVariable("id") int id, Model model) {
+    //    model.addAttribute("todos", userService.getToDoByUserId(id));
         return "todo";
     }
 }

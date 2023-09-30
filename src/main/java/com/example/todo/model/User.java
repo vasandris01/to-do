@@ -1,5 +1,6 @@
 package com.example.todo.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +24,8 @@ public class User {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<ToDo> toDos;
 }
 
